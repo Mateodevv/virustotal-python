@@ -5,7 +5,7 @@ with open("../README.md", "r") as fh:
 
 setuptools.setup(
     name="vtpython",
-    version="1.2",
+    version="2",
     author="Mateo Mrvelj",
     author_email="burningmalwareblog@gmail.com",
     description="A very simple Python package for submitting files to VirusTotal for analysis",
