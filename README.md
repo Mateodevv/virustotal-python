@@ -9,7 +9,7 @@ A very simple implementation of the VirusTotal V3 API. You can examine files/url
 
 
 ``` 
-from virustotalapi import VirusTotalClient
+from vtpython import VirusTotalClient
 
 client = VirtusTotalClient('YOUR-API-KEY')
 
