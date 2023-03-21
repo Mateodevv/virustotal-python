@@ -5,7 +5,7 @@ import time
 import requests
 
 
-def hash_file(filepath):
+def _hash_file(filepath):
     """
     Compute the SHA-256 hash of a file.
 
