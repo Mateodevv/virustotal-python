@@ -70,7 +70,7 @@ class VirusTotalClient:
             dict: A dictionary containing the analysis report for the file.
         """
         self._submit_file_for_analysis(filepath)
-        hashed_file = hash_file(filepath)
+        hashed_file = _hash_file(filepath)
         response = requests.get(f"{self.url}/files/{hashed_file}", headers=self.headers)
         if response.status_code == 200:
             return response.json()["data"]["attributes"]
