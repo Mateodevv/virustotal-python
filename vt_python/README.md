@@ -1,10 +1,15 @@
 # virustotal-python
 A very simple implementation of the VirusTotal V3 API. You can examine files/urls/domains/IPs quickly by simply passing the filepath.
 
+## installation
+
+```pip install vtpython```
+
 ## Quickstart
 
 
-``` from virustotalapi import VirusTotalClient
+``` 
+from virustotalapi import VirusTotalClient
 
 client = VirtusTotalClient('YOUR-API-KEY')
 
