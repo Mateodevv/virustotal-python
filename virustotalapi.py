@@ -106,21 +106,6 @@ class VirusTotalClient:
         else:
             print(f"Error submitting URL for analysis: {response.text}")
 
-    def get_domain_report(self, domain):
-        """
-        Get the domain report for a given domain.
-
-        Args:
-            domain (str): The domain to get the report for.
-
-        Returns:
-            dict: A dictionary containing the domain report.
-        """
-        response = requests.get(f"{self.url}/domains/{domain}", headers=self.headers)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            print(f"Error getting domain report: {response.text}")
 
     def get_domain_report(self, domain):
         """
