@@ -1,7 +1,7 @@
 # virustotal-python
 A very simple implementation of the VirusTotal V3 API. You can examine files/urls/domains/IPs quickly by simply passing the filepath.
 
-## installation
+## Installation
 
 ```pip install vtpython```
 
