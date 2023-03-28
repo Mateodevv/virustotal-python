@@ -96,42 +96,40 @@ class VirusTotalClient:
                 if response.status_code == 200:
                     analysis_results = response.json()
                     return analysis_results
-            else:
-                print(f"Error retrieving analysis results: {response.text}")
+                else:
+                    return Exception("Failed to retrieve URL Analysis")
 
         else:
             print(f"Error submitting URL for analysis: {response.text}")
 
+    def get_domain_report(self, domain):
+        """
+        Get the domain report for a given domain.
 
-def get_domain_report(self, domain):
-    """
-    Get the domain report for a given domain.
+        Args:
+            domain (str): The domain to get the report for.
 
-    Args:
-        domain (str): The domain to get the report for.
+        Returns:
+            dict: A dictionary containing the domain report.
+        """
+        response = requests.get(f"{self.url}/domains/{domain}", headers=self.headers)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print(f"Error getting domain report: {response.text}")
 
-    Returns:
-        dict: A dictionary containing the domain report.
-    """
-    response = requests.get(f"{self.url}/domains/{domain}", headers=self.headers)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Error getting domain report: {response.text}")
+    def get_ip_address_report(self, ip_address):
+        """
+        Get a report on an IP address.
 
+        Args:
+            ip_address (str): The IP address to get the report for.
 
-def get_ip_address_report(self, ip_address):
-    """
-    Get a report on an IP address.
-
-    Args:
-        ip_address (str): The IP address to get the report for.
-
-    Returns:
-        dict: A dictionary containing the report for the IP address.
-    """
-    response = requests.get(f"{self.url}/ip_addresses/{ip_address}", headers=self.headers)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Error getting IP address report: {response.text}")
+        Returns:
+            dict: A dictionary containing the report for the IP address.
+        """
+        response = requests.get(f"{self.url}/ip_addresses/{ip_address}", headers=self.headers)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print(f"Error getting IP address report: {response.text}")
