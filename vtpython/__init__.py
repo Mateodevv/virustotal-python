@@ -17,7 +17,10 @@ def _hash_file(filepath):
     """
     with open(filepath, "rb") as f:
         hasher = hashlib.sha256()
-        while chunk := f.read(1024 * 1024):
+        while True:
+            chunk = f.read(1024 * 1024)
+            if not chunk:
+                break
             hasher.update(chunk)
     return hasher.hexdigest()
 
